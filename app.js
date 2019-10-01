@@ -9,22 +9,18 @@ var indexRouter = require('./routes/index.js');
 
 var app = express();
 
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
 app.use(express.static('dist'))
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 express.static(path.join(__dirname, 'dist'));
+express.static(path.join(__dirname, 'src'));
+express.static(path.join(__dirname, 'src/components'));
+express.static(path.join(__dirname, 'src/styleSheets'));
 
+// gets main page
 app.use('/', indexRouter);
-
-// router.get('/', function (req, res) {
-//   res.sendFile(path.join(__dirname + '/dist/index.html'));
-//   //__dirname : It will resolve to your project folder.
-// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,7 +35,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({ error: err });
 });
 
 module.exports = app;
