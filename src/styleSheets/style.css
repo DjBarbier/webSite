@@ -1,3 +1,9 @@
 .mainContainer {
     background-color: lightblue;
 }
+
+.topBar {
+    height: 20vh;
+    background-color: lightblue;
+    width: 100%;
+}
