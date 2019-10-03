@@ -3,7 +3,12 @@
 }
 
 .topBar {
-    height: 20vh;
+    height: 100vh;
     background-color: lightblue;
-    width: 100%;
+    width: 100vw;
+    /* position: static; */
+}
+.topBarText {
+    text-align: center !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }

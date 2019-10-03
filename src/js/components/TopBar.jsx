@@ -9,9 +9,7 @@ class TopBar extends Component {
 
     render() {
         return (
-            <div className="topBar" >
-                <h2>Dale Barbier</h2>
-        </div>
+            <div></div>
         )
 
     }
